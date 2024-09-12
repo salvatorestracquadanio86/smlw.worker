@@ -1,0 +1,22 @@
+{
+  "name": "@smlw/smlw.worker",
+  "version": "1.0.0",
+  "description": "Baseline smlw worker functions",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/salvatorestracquadanio86/smlw.worker.git"
+  },
+  "keywords": [
+    "smlw"
+  ],
+  "author": "Salvatore Stracquadanio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/salvatorestracquadanio86/smlw.worker/issues"
+  },
+  "homepage": "https://github.com/salvatorestracquadanio86/smlw.worker#readme"
+}
