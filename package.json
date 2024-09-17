@@ -1,6 +1,6 @@
 {
   "name": "@smlw/smlw.worker",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Baseline smlw worker functions",
   "main": "src/index.js",
   "scripts": {
