@@ -95,7 +95,7 @@ class RabbitMqService {
         try {
             await me.channel.assertQueue(me.env.RABBIT_MQ_WRITE_QUEUE, { durable: true });
             me.channel.sendToQueue(me.env.RABBIT_MQ_WRITE_QUEUE, Buffer.from(JSON.stringify(data)), { persistent: true });
-        } catch (err) {
+        } catch (e) {
             this.logger.error('Error sending task to queue', {metadata: {tid, message: e.message}});
         }
     }

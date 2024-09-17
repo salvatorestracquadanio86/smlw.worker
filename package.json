@@ -4,7 +4,7 @@
   "description": "Baseline smlw worker functions",
   "main": "src/index.js",
   "scripts": {
-    "test": "npm run test"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -28,5 +28,22 @@
     "winston": "3.10.0",
     "winston-daily-rotate-file": "5.0.0",
     "winston-mongodb": "5.1.1"
+  },
+  "devDependencies": {
+    "jest": "29.7.0",
+    "jest-mock": "29.7.0",
+    "sinon": "19.0.2"
+  },
+  "jest": {
+    "verbose": true,
+    "collectCoverage": true,
+    "coverageDirectory": "./coverage",
+    "coveragePathIgnorePatterns": [
+      "./node_modules"
+    ],
+    "coverageReporters": [
+      "lcov",
+      "text"
+    ]
   }
 }
