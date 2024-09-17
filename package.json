@@ -2,7 +2,7 @@
   "name": "@smlw/smlw.worker",
   "version": "1.0.0",
   "description": "Baseline smlw worker functions",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "npm run test"
   },
@@ -18,5 +18,15 @@
   "bugs": {
     "url": "https://github.com/salvatorestracquadanio86/smlw.worker/issues"
   },
-  "homepage": "https://github.com/salvatorestracquadanio86/smlw.worker#readme"
+  "homepage": "https://github.com/salvatorestracquadanio86/smlw.worker#readme",
+  "dependencies": {
+    "amqplib": "0.10.3",
+    "colors": "1.4.0",
+    "lodash": "4.17.21",
+    "node-schedule": "2.1.1",
+    "uuid": "9.0.1",
+    "winston": "3.10.0",
+    "winston-daily-rotate-file": "5.0.0",
+    "winston-mongodb": "5.1.1"
+  }
 }

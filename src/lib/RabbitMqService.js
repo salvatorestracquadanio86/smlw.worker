@@ -27,7 +27,7 @@ class RabbitMqService {
             me.channel = await connection.createChannel();
 
             me.channel.on('close', () => {
-                logger.error('Rabbit mq connection lost', {metadata: {tid}});
+                this.logger.error('Rabbit mq connection lost', {metadata: {tid}});
                 me.channel = null;
                 connection.close();
                 me.connectionScheduler('lostConnection', tid);
@@ -38,11 +38,11 @@ class RabbitMqService {
                 me.job.cancel();
             }
 
-            logger.info(`Rabbit mq connection established on ${me.env.RABBIT_MQ_CONNECTIONSTRING}`, {metadata: {tid}});
+            this.logger.info(`Rabbit mq connection established on ${me.env.RABBIT_MQ_CONNECTIONSTRING}`, {metadata: {tid}});
             me.consumeQueue();
 
         } catch (e) {
-            logger.error('Unable to connect to rabbit mq server', {metadata: {tid, message: e.message}});
+            this.logger.error('Unable to connect to rabbit mq server', {metadata: {tid, message: e.message}});
             if (!me.job) {
                 me.connectionScheduler('FirstConnection', 'SETUP');
             }
@@ -96,7 +96,7 @@ class RabbitMqService {
             await me.channel.assertQueue(me.env.RABBIT_MQ_WRITE_QUEUE, { durable: true });
             me.channel.sendToQueue(me.env.RABBIT_MQ_WRITE_QUEUE, Buffer.from(JSON.stringify(data)), { persistent: true });
         } catch (err) {
-            logger.error('Error sending task to queue', {metadata: {tid, message: e.message}});
+            this.logger.error('Error sending task to queue', {metadata: {tid, message: e.message}});
         }
     }
 }

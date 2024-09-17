@@ -1,10 +1,9 @@
 const RabbitMqService = require('./RabbitMqService');
-const loggerSetup = require('./logger');
 
 class WorkerService {
 
-    constructor(env){
-        this.logger = loggerSetup();
+    constructor(env, logger){
+        this.logger = logger;
         this.rabbitMqService = new RabbitMqService(env, this, this.logger);
         this.rabbitMqService.connect();
     }
