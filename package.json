@@ -1,6 +1,6 @@
 {
   "name": "@salvatorestracquadanio86/smlw.worker",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Baseline smlw worker functions",
   "main": "src/index.js",
   "scripts": {
